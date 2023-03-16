@@ -1,8 +1,8 @@
 To Do list:
 
-Create git repository
+Create git repository [done]
 
-Set up Mongo DB
+Set up Mongo DB [done]
 
 Create models:
   - Beer [done]
@@ -22,8 +22,9 @@ Create models:
       - FUTURE: Create Cuts field and Compliments Field
   - Food Attributes [done]
     - Name
-  - User??
+  - User??[done]
     - Learn how to do login reg for MERN
+    - Still working on auth and login, but model is done
   - Pairings?? [done]
     - ID
     - userId
