@@ -33,8 +33,10 @@ Create models:
     - Comments
 
 Create Routes
+  - User routes [done]
 
 Create Controllers
+  - Users [done]
 
 Get Login Registration set up
 
