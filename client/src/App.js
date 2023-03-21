@@ -1,11 +1,11 @@
 import React from 'react'
-import PersonForm from './components/PersonForm';
+import LandingPage from './components/login';
 import './App.css';
 
 function App() {
   return (
     <div className='App'>
-      <PersonForm/>
+      <LandingPage/>
     </div>
   );
 }

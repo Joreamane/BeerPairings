@@ -43,5 +43,14 @@ module.exports = {
             .catch((err => {
                 res.json({message: 'Something went wrong', error: err})
             }))
+    },
+    findOneUser: (req,res) => {
+        User.findById({_id: req.params._id})
+            .then((singleUser) => {
+                res.json({user:singleuser})
+            })
+            .catch((err) => {
+                res.json({message:'Something went wrong', error:err})
+            })
     }
 }
