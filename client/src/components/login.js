@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import '../App.css'
+import { useNavigate } from 'react-router-dom'
 
 const LandingPage = () => {
     // const [ message, setMessage ] = useState('...Loading')
@@ -8,6 +9,7 @@ const LandingPage = () => {
     const [ lastName, setLastName] = useState("")
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
+    const navigate = useNavigate()
 
     const onRegisterHandler = (e) => {
         e.preventDefault();
@@ -22,6 +24,7 @@ const LandingPage = () => {
                 console.log(res.data)
             })
             .catch(err => console.log(err))
+        navigate('/api/homepage')
     }
 
     const onLoginHandler = (e) => {
@@ -35,6 +38,7 @@ const LandingPage = () => {
                 console.log(res.data)
             })
             .catch(err=> console.log(err))
+        navigate('/api/homepage')
     }
 
 
@@ -74,7 +78,7 @@ const LandingPage = () => {
             </p>
             <p>
                 <label>Password</label><br/>
-                <input type='text' onChange = {e=> setPassword(e.target.value)}/>
+                <input type='password' onChange = {e=> setPassword(e.target.value)}/>
             </p>
             <input type='submit'/>
         </form>
