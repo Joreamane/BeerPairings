@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 const BeerSchema = new mongoose.Schema({
-    id: Number, //autogenerate
     brand: String, // user input
     name: String, // user input
     style: String //reference Style model
