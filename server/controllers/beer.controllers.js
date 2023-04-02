@@ -1,5 +1,6 @@
 const Beer = require('../models/beer.model')
 const BeerAttribute = require('../models/beerAttr.model')
+const BeerStyle = require('../models/style.model')
 
 module.exports = {
     addBeer: async (req,res) => {
@@ -27,5 +28,14 @@ module.exports = {
         Beer.findOneAndUpdate({_id:req.params.id}, req.body, {new:true, runValidators:true})
             .then(updatedBeer => res.json(updatedBeer))
             .catch(err => res.status(400).json(err))
+    },
+
+    addStyle: async (req,res) => {
+        try{
+            const newStyle = await BeerStyle.create(req.body)
+            res.json(newStyle)
+        } catch(err) {
+            res.status(400).json(err)
+        }
     }
 }
