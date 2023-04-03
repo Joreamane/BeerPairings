@@ -35,7 +35,16 @@ const HomePage = (props) => {
         <div>
             <h1>Homepage Placeholder</h1>
             <h2>Map through all beers in cards</h2>
-            <Link to={`/api/addBeer`} className='link'>Add a beer!</Link>
+            {/* <Link to={`/api/addBeer`} className='link'>Add a beer!</Link> */}
+            {beers.map((beer, index) => {
+                return(
+                    <div>
+                        <h5>{beer.name}</h5>
+                        <p>Brand: {beer.brand}</p>
+                        <p>Style: {beer.style}</p>
+                    </div>
+                )
+            })}
             <div>
                 {/* need to finish this form first thing, get beer attributes going, set style as text input and attributes as a select option */}
                 <form onSubmit={onBeerAddHandler}>
