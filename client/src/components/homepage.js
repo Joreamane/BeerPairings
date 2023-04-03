@@ -4,6 +4,7 @@ import '../App.css'
 import { useNavigate, Link} from 'react-router-dom'
 
 const HomePage = (props) => {
+    const {styles, setStyles} = props
     const {beers, setBeers} = props
     const [brand, setBrand] = useState("")
     const [name, setName] = useState("")
@@ -14,6 +15,12 @@ const HomePage = (props) => {
             .then(res => setBeers(res.data))
             .catch(err => console.log(err))
     }, [])
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/allStyles')
+            .then(res => setStyles(res.data))
+            .catch(err => console.log(err))
+    })
     
     const onBeerAddHandler = (e) => {
         e.preventDefault()
@@ -44,7 +51,11 @@ const HomePage = (props) => {
                     <p>
                         <label>Style:</label>
                         <select onChange={e => setStyle(e.target.value)}>
-                            
+                            {styles.map((style, index) => {
+                                return(
+                                    <option>{style.name}</option>
+                                )
+                            })}
                         </select>
                     </p>
                     <input type='submit' value='Add beer'/>
