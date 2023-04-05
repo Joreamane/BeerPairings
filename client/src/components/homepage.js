@@ -70,6 +70,17 @@ const HomePage = (props) => {
                     <input type='submit' value='Add beer'/>
                 </form>
             </div>
+            <div>
+                <form onSubmit={onStyleAddHandler}>
+                    <p>
+                        <label>Style Name:</label>
+                        <input type='text' onChange = {e => setName(e.target.value)}/>
+                    </p>
+                    <p>
+                        
+                    </p>
+                </form>
+            </div>
         </div>
     )
 }
