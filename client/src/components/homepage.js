@@ -9,6 +9,7 @@ const HomePage = (props) => {
     const [brand, setBrand] = useState("")
     const [name, setName] = useState("")
     const [style, setStyle] = useState("")
+    const [beerAPI, setBeerAPI] = useState("")
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/allBeers')
@@ -20,6 +21,18 @@ const HomePage = (props) => {
         axios.get('http://localhost:8000/api/allStyles')
             .then(res => setStyles(res.data))
             .catch(err => console.log(err))
+    })
+
+    useEffect(()=> {
+        axios.get('https://api.untappd.com/v4')
+            .then(res => {
+                return res.data
+            })
+            .then(res => {
+                setBeerAPI({
+                    untappd: res.results
+                })
+            })
     })
     
     const onBeerAddHandler = (e) => {
