@@ -49,7 +49,7 @@ const HomePage = (props) => {
             <h1>Homepage Placeholder</h1>
             <h2>Map through all beers in cards</h2>
             {/* <Link to={`/api/addBeer`} className='link'>Add a beer!</Link> */}
-            {beers.map((beer, index) => {
+            {/* {beers.map((beer, index) => {
                 return(
                     <div>
                         <h5>{beer.name}</h5>
@@ -57,10 +57,10 @@ const HomePage = (props) => {
                         <p>Style: {beer.style}</p>
                     </div>
                 )
-            })}
+            })} */}
             <div>
                 {/* need to finish this form first thing, get beer attributes going, set style as text input and attributes as a select option */}
-                <form onSubmit={onBeerAddHandler}>
+                {/* <form onSubmit={onBeerAddHandler}>
                     <h3>What beer are you drinking tonight?</h3>
                     <p>
                         <label>Brand:</label>
@@ -81,9 +81,9 @@ const HomePage = (props) => {
                         </select>
                     </p>
                     <input type='submit' value='Add beer'/>
-                </form>
+                </form> */}
             </div>
-            <div>
+            {/* <div>
                 <form onSubmit={onStyleAddHandler}>
                     <p>
                         <label>Style Name:</label>
@@ -93,7 +93,7 @@ const HomePage = (props) => {
                         
                     </p>
                 </form>
-            </div>
+            </div> */}
         </div>
     )
 }
